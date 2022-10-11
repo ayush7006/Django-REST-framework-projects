@@ -1,6 +1,12 @@
 from .models import Student
 from rest_framework import serializers
 
+
+
+
+
+#normal serializer 
+"""
 class StudentSerializer(serializers.Serializer):
     name=serializers.CharField(max_length=100)
     roll=serializers.IntegerField()
@@ -21,4 +27,23 @@ class StudentSerializer(serializers.Serializer):
     def validate_roll(self, value):
         if value >= 200:
             raise serializers.ValidationError('seat full')
-        return value    
+        return value  
+"""          
+
+#model serializer
+class StudentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = ['name','roll','city']
+        #read_only_field=['name','city']
+        #extra_kwargs = {'name':{'read_only':True}}
+
+        
+#field lavel validation        
+    def validate_roll(self, value):
+        if value >= 200:
+            raise serializers.ValidationError('seat full')
+        return value
+
+
+        
