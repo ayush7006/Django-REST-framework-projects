@@ -6,10 +6,10 @@ from .serializers import StudentSerializer
 
 
 # Create your views here.
-@api_view(['GET','POST','PUT','DELETE'])
-def Student_api(request):
+@api_view(['GET','POST','PUT','PATCH','DELETE'])   #patch added
+def Student_api(request,pk=None):
     if request.method == 'GET':
-        id = request.data.get('id')
+        id = pk                                  #id = request.data.get('id')
         if id is not None:
             stu = Student.objects.get(id=id)
             serializer = StudentSerializer(stu)
@@ -22,19 +22,33 @@ def Student_api(request):
         serializer = StudentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({'msh':'data created'})
+            return Response({'msg':'data created'})
         return Response(serializer.errors)
 
     if request.method == 'PUT':
-        id = request.data.get('id') 
+        id = pk                                  #id = request.data.get('id')
         stu = Student.objects.get(pk=id) 
-        serializer = StudentSerializer(stu ,data=request.data,partial=True)
+        serializer = StudentSerializer(stu ,data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({'msh':'data updated'})
+            return Response({'msg':'complit data updated'})
         return Response(serializer.errors)
+
+
+    if request.method == 'PATCH':
+            id = pk                                  #id = request.data.get('id')
+            stu = Student.objects.get(pk=id) 
+            serializer = StudentSerializer(stu ,data=request.data,partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'msg':' PATCH data updated'})
+            return Response(serializer.errors)
+
+
+
+
     if request.method == 'DELETE':
-        id = request.data.get('id') 
+        id = pk                                  #id = request.data.get('id') 
         stu = Student.objects.get(pk=id)
         stu.delete()
-        return Response({'msh':'data deleted'})
+        return Response({'msg':'data deleted'}) 
