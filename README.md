@@ -7,10 +7,12 @@ drf code = djangorestframework
 2 deserializertion
 
 
-3 CRUD_api (CRUD API using django Function Based View and Class Based View)+(field lavel validation in roll no.)
+3 CRUD_api --(CRUD API using django Function Based View and Class Based View)+(field lavel validation in roll no.)
 
 
-4 CRUD_DRF_api_view (CRUD API using drf Function Based api_View)
+4 CRUD_DRF_api_view --(CRUD API using drf Function Based api_View)
 
+
+5 CRUD_GENERIC_APIVIEW --'CRUD--using-generic-apiview,mixin'
 
 myapp is tasting app (comm.. with api)
