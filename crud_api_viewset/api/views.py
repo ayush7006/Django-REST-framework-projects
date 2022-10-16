@@ -1,3 +1,18 @@
+#model view et mehtod
+from .models import Student
+from .serializers import StudentSerializer
+from rest_framework import viewsets
+
+class StudentViewset(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+
+
+
+
+# view set method
+'''
 from django.shortcuts import render
 from rest_framework.response import Response
 from .models import Student
@@ -43,3 +58,4 @@ class StudentViewset(viewsets.ViewSet):
         stu = Student.objects.get(pk=id)
         stu.delete()
         return Response({'msg':'data--delete'})
+        '''
