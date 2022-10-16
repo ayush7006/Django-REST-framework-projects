@@ -15,4 +15,6 @@ drf code = djangorestframework
 
 5 CRUD_GENERIC_APIVIEW --'CRUD--using-generic-apiview,mixin'
 
+6--CRUD_concrete_view_class--crud_opr_using--concrete_view_class'
+
 myapp is tasting app (comm.. with api)
