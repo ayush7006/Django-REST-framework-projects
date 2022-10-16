@@ -17,4 +17,6 @@ drf code = djangorestframework
 
 6--CRUD_concrete_view_class--crud_opr_using--concrete_view_class'
 
+7--crud_api_viewset----'crud_opr using viewsets'
+
 myapp is tasting app (comm.. with api)
