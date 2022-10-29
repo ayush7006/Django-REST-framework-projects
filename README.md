@@ -25,5 +25,7 @@ drf code = djangorestframework
 
 10-pagination --page_no,limit_off_set,cursor
 
+11- serializer_relation
+
 
 myapp is tasting app (comm.. with api)
