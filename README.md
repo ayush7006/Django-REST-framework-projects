@@ -19,4 +19,11 @@ drf code = djangorestframework
 
 7--crud_api_viewset----'crud_opr using viewsets'
 
+8-- authentication basic,jwt,token,session
+
+9-filter ,search,ordering
+
+10-pagination --page_no,limit_off_set,cursor
+
+
 myapp is tasting app (comm.. with api)
